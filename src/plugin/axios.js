@@ -6,6 +6,8 @@ const instance = axios.create({
 
 // 请求拦截器
 instance.interceptors.request.use(function (config) {
+  
+  config.headers.Authorization = window.sessionStorage.getItem('token')
     return config;
   }, function (error) {
     return Promise.reject(error);

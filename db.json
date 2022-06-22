@@ -6,5 +6,159 @@
       "password": 123456,
       "token": "systemadmin"
     }
+  ],
+  "menuData": {
+    "data": [
+      {
+        "id": "101",
+        "menuName": "商品管理",
+        "children": [
+          {
+            "id": "101-1",
+            "menuName": "商品列表",
+            "path": "/shop"
+          }
+        ]
+      },
+      {
+        "id": "102",
+        "menuName": "用户管理",
+        "children": [
+          {
+            "id": "102-1",
+            "menuName": "用户列表",
+            "path": "/user"
+          },
+          {
+            "id": "102-2",
+            "menuName": "用户数据",
+            "path": "/userdata"
+          }
+        ]
+      },
+      {
+        "id": "103",
+        "menuName": "权限管理",
+        "children": [
+          {
+            "id": "103-1",
+            "menuName": "权限列表",
+            "path": "/jurisdiction"
+          }
+        ]
+      },
+      {
+        "id": "104",
+        "menuName": "数据管理",
+        "children": [
+          {
+            "id": "104-1",
+            "menuName": "数据列表",
+            "path": "/delect"
+          }
+        ]
+      },
+      {
+        "id": "105",
+        "menuName": "视图管理",
+        "children": [
+          {
+            "id": "105-1",
+            "menuName": "视图列表",
+            "path": "/view"
+          }
+        ]
+      }
+    ],
+    "meta": {
+      "msg": "获取列表成功",
+      "status": 200
+    }
+  },
+  "todoData": [
+    {
+      "task": "你好",
+      "datestar": "2022-6-1",
+      "dateend": "2022-7-1",
+      "state": true,
+      "id": 1
+    },
+    {
+      "task": "大大",
+      "datestar": "",
+      "dateend": "",
+      "state": true,
+      "id": 2
+    },
+    {
+      "task": "",
+      "datestar": "",
+      "dateend": "",
+      "state": false,
+      "id": 3
+    },
+    {
+      "task": "大大",
+      "datestar": "",
+      "dateend": "",
+      "state": true,
+      "id": 4
+    },
+    {
+      "task": "",
+      "datestar": "",
+      "dateend": "",
+      "state": false,
+      "id": 5
+    },
+    {
+      "task": "大大",
+      "datestar": "",
+      "dateend": "",
+      "state": true,
+      "id": 6
+    },
+    {
+      "task": "大大",
+      "datestar": "",
+      "dateend": "",
+      "state": true,
+      "id": 7
+    },
+    {
+      "task": "你好",
+      "datestar": "2022-6-17",
+      "dateend": "2022-7-12",
+      "state": false,
+      "id": 8
+    },
+    {
+      "task": "dada",
+      "datestar": "2022-6-9",
+      "dateend": "2022-7-7",
+      "state": true,
+      "id": 9
+    },
+    {
+      "task": "d大大大",
+      "datestar": "2022-6-1",
+      "dateend": "2022-7-1",
+      "state": true,
+      "id": 10
+    },
+    {
+      "task": "d",
+      "datestar": "2022-6-6",
+      "dateend": "2022-6-8",
+      "state": false,
+      "id": 11
+    },
+    {
+      "task": "尼亚",
+      "datestar": "2022-6-17",
+      "dateend": "2022-7-12",
+      "state": false,
+      "id": 12
+    }
   ]
 }
