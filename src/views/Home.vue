@@ -38,7 +38,7 @@
               <span>{{ item.menuName }}</span>
             </template>
             <!-- 二级菜单 -->
-            <el-menu-item :index="i.path" v-for="i in item.children" :key="i.id" @click="setActiveIndexAction(i.path)">
+            <el-menu-item :index="'/home'+i.path" v-for="i in item.children" :key="i.id" @click="setActiveIndexAction(i.path)">
               <i class="el-icon-menu"></i>
               {{ i.menuName }}
             </el-menu-item>
@@ -55,7 +55,9 @@
 </template>
 
 <script>
+
 export default {
+  
   data() {
     return {
       menuList: [],
@@ -73,8 +75,10 @@ export default {
   },
   methods: {
     async getMenuList() {
-      let { data: res } = await this.$api.get_menuList();
-      this.menuList = res.data;
+      let type = window.sessionStorage.getItem('type')
+      let { data: res } = await this.$api.get_menuList({id:type});
+      console.log(res);
+      this.menuList = res[0].data;
     },
     // 点击按钮折叠menu
     asideIconBtnAction() {
@@ -90,6 +94,7 @@ export default {
   created() {
     this.getMenuList();
     // this.activeIndex = window.sessionStorage.getItem('path')
+    
   },
 };
 </script>

@@ -13,7 +13,10 @@ import { Form, FormItem, Input, Button, Message, Container, Header, Aside, Main,
     Pagination,
     Dialog,
     DatePicker,
-    MessageBox
+    MessageBox,
+    Breadcrumb,
+    BreadcrumbItem,
+    Tag
 } from 'element-ui'
 Vue.use(Form)
 Vue.use(FormItem)
@@ -39,6 +42,9 @@ Vue.use(TableColumn)
 Vue.use(Pagination)
 Vue.use(Dialog)
 Vue.use(DatePicker)
+Vue.use(Breadcrumb)
+Vue.use(BreadcrumbItem)
+Vue.use(Tag)
 Vue.prototype.$message = Message
 Vue.prototype.$confirm = MessageBox
 

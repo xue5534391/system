@@ -8,10 +8,13 @@ const get_tableData = (params) => httpsRes.get("/todoData", {params}) //获取�
 const post_tableData = (params) => httpsRes.post("/todoData", params) //添加todolist数据
 const patch_tableData = (id, params) => httpsRes.patch(`/todoData/${id}`, params) //添加todolist数据
 
+const get_UserData = (params) => httpsRes.get('/userData', {params})  //获取用户数据
+
 export default {
     get_LoginUserInfo,
     get_menuList,
     get_tableData,
     post_tableData,
-    patch_tableData
+    patch_tableData,
+    get_UserData
 }

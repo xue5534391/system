@@ -4,77 +4,147 @@
       "id": 1,
       "username": "admin",
       "password": 123456,
+      "type": 1,
       "token": "systemadmin"
+    },
+    {
+      "id": 2,
+      "username": "aaaa",
+      "password": 123456,
+      "type": 2,
+      "token": "systemaaaa"
     }
   ],
-  "menuData": {
-    "data": [
-      {
-        "id": "101",
-        "menuName": "商品管理",
-        "children": [
-          {
-            "id": "101-1",
-            "menuName": "商品列表",
-            "path": "/shop"
-          }
-        ]
-      },
-      {
-        "id": "102",
-        "menuName": "用户管理",
-        "children": [
-          {
-            "id": "102-1",
-            "menuName": "用户列表",
-            "path": "/user"
-          },
-          {
-            "id": "102-2",
-            "menuName": "用户数据",
-            "path": "/userdata"
-          }
-        ]
-      },
-      {
-        "id": "103",
-        "menuName": "权限管理",
-        "children": [
-          {
-            "id": "103-1",
-            "menuName": "权限列表",
-            "path": "/jurisdiction"
-          }
-        ]
-      },
-      {
-        "id": "104",
-        "menuName": "数据管理",
-        "children": [
-          {
-            "id": "104-1",
-            "menuName": "数据列表",
-            "path": "/delect"
-          }
-        ]
-      },
-      {
-        "id": "105",
-        "menuName": "视图管理",
-        "children": [
-          {
-            "id": "105-1",
-            "menuName": "视图列表",
-            "path": "/view"
-          }
-        ]
-      }
-    ],
-    "meta": {
-      "msg": "获取列表成功",
-      "status": 200
+  "menuData": [
+    {
+      "id": 1,
+      "data": [
+        {
+          "id": "101",
+          "UsertypeId": 1,
+          "menuName": "商品管理",
+          "children": [
+            {
+              "id": "101-1",
+              "menuName": "商品列表",
+              "path": "/shop"
+            }
+          ]
+        },
+        {
+          "id": "102",
+          "UsertypeId": 1,
+          "menuName": "用户管理",
+          "children": [
+            {
+              "id": "102-1",
+              "menuName": "用户列表",
+              "path": "/user"
+            },
+            {
+              "id": "102-2",
+              "menuName": "用户数据",
+              "path": "/userdata"
+            }
+          ]
+        },
+        {
+          "id": "103",
+          "menuName": "权限管理",
+          "UsertypeId": 1,
+          "children": [
+            {
+              "id": "103-1",
+              "menuName": "权限列表",
+              "path": "/jurisdiction"
+            }
+          ]
+        },
+        {
+          "id": "104",
+          "UsertypeId": 1,
+          "menuName": "数据管理",
+          "children": [
+            {
+              "id": "104-1",
+              "menuName": "数据列表",
+              "path": "/delect"
+            }
+          ]
+        },
+        {
+          "id": "105",
+          "UsertypeId": 1,
+          "menuName": "视图管理",
+          "children": [
+            {
+              "id": "105-1",
+              "menuName": "视图列表",
+              "path": "/view"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "data": [
+        {
+          "id": "101",
+          "UsertypeId": 1,
+          "menuName": "商品管理",
+          "children": [
+            {
+              "id": "101-1",
+              "menuName": "商品列表",
+              "path": "/shop"
+            }
+          ]
+        },
+        {
+          "id": "102",
+          "UsertypeId": 1,
+          "menuName": "用户管理",
+          "children": [
+            {
+              "id": "102-1",
+              "menuName": "用户列表",
+              "path": "/user"
+            },
+            {
+              "id": "102-2",
+              "menuName": "用户数据",
+              "path": "/userdata"
+            }
+          ]
+        },
+        {
+          "id": "104",
+          "UsertypeId": 1,
+          "menuName": "数据管理",
+          "children": [
+            {
+              "id": "104-1",
+              "menuName": "数据列表",
+              "path": "/delect"
+            }
+          ]
+        },
+        {
+          "id": "105",
+          "UsertypeId": 1,
+          "menuName": "视图管理",
+          "children": [
+            {
+              "id": "105-1",
+              "menuName": "视图列表",
+              "path": "/view"
+            }
+          ]
+        }
+      ]
     }
-  },
+  ],
   "todoData": [
     {
       "task": "你好",
@@ -159,6 +229,38 @@
       "dateend": "2022-7-12",
       "state": false,
       "id": 12
+    }
+  ],
+  "userData": [
+    {
+      "id": 1,
+      "username": "aaaa",
+      "tel": 13517789953,
+      "type": 1
+    },
+    {
+      "id": 2,
+      "username": "bbbb",
+      "tel": 18817687953,
+      "type": 1
+    },
+    {
+      "id": 3,
+      "username": "cccc",
+      "tel": 13591254497,
+      "type": 1
+    },
+    {
+      "id": 4,
+      "username": "dddd",
+      "tel": 18569782211,
+      "type": 1
+    },
+    {
+      "id": 5,
+      "username": "eeee",
+      "tel": 15978953302,
+      "type": 1
     }
   ]
 }
