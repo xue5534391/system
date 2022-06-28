@@ -29,6 +29,8 @@ export const routes = [
       { path: 'shop', component: () => import('../views/Shop/Shop.vue') },
       { path: 'user', component: () => import('../views/User/User.vue') },
       { path: 'userdata', component: () => import('../views/User/Userdata.vue') },
+      { path: 'view', component: () => import('../views/View/View.vue') },
+      { path: 'delect', component: () => import('../views/Delect.vue') }
     ]
   },
 ]
@@ -39,15 +41,7 @@ export const noFround = {
   path: '*',
   component: () => import("../views/noFround.vue")
 }
-// let type = window.sessionStorage.getItem('type')
-// if (type == 1) {
-//   routes.map((item) => {
-//     if (item.path == '/home') {
-//       // item.children.push(addRouter)
-//       // VueRouter.addRouters(addRouter)
-//     }
-//   })
-// }
+
 const router = new VueRouter({
   mode: "history",
   base: process.env.BASE_URL,

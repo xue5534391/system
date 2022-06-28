@@ -27,7 +27,7 @@
             {
               "id": "101-1",
               "menuName": "商品列表",
-              "path": "/shop"
+              "path": "/home/shop"
             }
           ]
         },
@@ -39,12 +39,12 @@
             {
               "id": "102-1",
               "menuName": "用户列表",
-              "path": "/user"
+              "path": "/home/user"
             },
             {
               "id": "102-2",
               "menuName": "用户数据",
-              "path": "/userdata"
+              "path": "/home/userdata"
             }
           ]
         },
@@ -56,7 +56,7 @@
             {
               "id": "103-1",
               "menuName": "权限列表",
-              "path": "/jurisdiction"
+              "path": "/home/jurisdiction"
             }
           ]
         },
@@ -68,7 +68,7 @@
             {
               "id": "104-1",
               "menuName": "数据列表",
-              "path": "/delect"
+              "path": "/home/delect"
             }
           ]
         },
@@ -80,7 +80,7 @@
             {
               "id": "105-1",
               "menuName": "视图列表",
-              "path": "/view"
+              "path": "/home/view"
             }
           ]
         }
@@ -97,7 +97,7 @@
             {
               "id": "101-1",
               "menuName": "商品列表",
-              "path": "/shop"
+              "path": "/home/shop"
             }
           ]
         },
@@ -109,12 +109,12 @@
             {
               "id": "102-1",
               "menuName": "用户列表",
-              "path": "/user"
+              "path": "/home/user"
             },
             {
               "id": "102-2",
               "menuName": "用户数据",
-              "path": "/userdata"
+              "path": "/home/userdata"
             }
           ]
         },
@@ -126,7 +126,7 @@
             {
               "id": "104-1",
               "menuName": "数据列表",
-              "path": "/delect"
+              "path": "/home/delect"
             }
           ]
         },
@@ -138,7 +138,7 @@
             {
               "id": "105-1",
               "menuName": "视图列表",
-              "path": "/view"
+              "path": "/home/view"
             }
           ]
         }
@@ -147,32 +147,11 @@
   ],
   "todoData": [
     {
-      "task": "你好",
-      "datestar": "2022-6-1",
-      "dateend": "2022-7-1",
-      "state": true,
-      "id": 1
-    },
-    {
-      "task": "大大",
-      "datestar": "",
-      "dateend": "",
-      "state": true,
-      "id": 2
-    },
-    {
-      "task": "",
+      "task": "da",
       "datestar": "",
       "dateend": "",
       "state": false,
       "id": 3
-    },
-    {
-      "task": "大大",
-      "datestar": "",
-      "dateend": "",
-      "state": true,
-      "id": 4
     },
     {
       "task": "",
@@ -196,13 +175,6 @@
       "id": 7
     },
     {
-      "task": "你好",
-      "datestar": "2022-6-17",
-      "dateend": "2022-7-12",
-      "state": false,
-      "id": 8
-    },
-    {
       "task": "dada",
       "datestar": "2022-6-9",
       "dateend": "2022-7-7",
@@ -217,18 +189,18 @@
       "id": 10
     },
     {
-      "task": "d",
-      "datestar": "2022-6-6",
-      "dateend": "2022-6-8",
-      "state": false,
-      "id": 11
-    },
-    {
       "task": "尼亚",
       "datestar": "2022-6-17",
       "dateend": "2022-7-12",
       "state": false,
       "id": 12
+    },
+    {
+      "task": "ho",
+      "datestar": "",
+      "dateend": "",
+      "state": false,
+      "id": 13
     }
   ],
   "userData": [
@@ -261,6 +233,98 @@
       "username": "eeee",
       "tel": 15978953302,
       "type": 1
+    }
+  ],
+  "teacher": [
+    {
+      "id": 1,
+      "classRoom": "高一(1)班",
+      "classTea": "李明",
+      "classTeaTel": "13517789953",
+      "Chineselanguage": "李雪",
+      "mathematics": "王明明",
+      "English": "李明"
+    },
+    {
+      "id": 2,
+      "classRoom": "高一(2)班",
+      "classTea": "李雪",
+      "classTeaTel": "18817687953",
+      "Chineselanguage": "李雪",
+      "mathematics": "李尚",
+      "English": "潘梅敏"
+    },
+    {
+      "id": 3,
+      "classRoom": "高一(3)班",
+      "classTea": "王明明",
+      "classTeaTel": "13591254497",
+      "Chineselanguage": "武会明",
+      "mathematics": "王明明",
+      "English": "李明"
+    },
+    {
+      "id": 4,
+      "classRoom": "高一(4)班",
+      "classTea": "李尚",
+      "classTeaTel": "18569782211",
+      "Chineselanguage": "钟国强",
+      "mathematics": "李尚",
+      "English": "潘梅敏"
+    },
+    {
+      "id": 5,
+      "classRoom": "高一(5)班",
+      "classTea": "潘梅敏",
+      "classTeaTel": "15978953302",
+      "Chineselanguage": "石建国",
+      "mathematics": "杨华",
+      "English": "潘梅敏"
+    },
+    {
+      "id": 6,
+      "classRoom": "高二(1)班",
+      "classTea": "杨华",
+      "classTeaTel": "15978953302",
+      "Chineselanguage": "石建国",
+      "mathematics": "王明明",
+      "English": "李明"
+    },
+    {
+      "id": 7,
+      "classRoom": "高二(2)班",
+      "classTea": "潘梅敏",
+      "classTeaTel": "15978953302",
+      "Chineselanguage": "石建国",
+      "mathematics": "杨华",
+      "English": "潘梅敏"
+    },
+    {
+      "id": 8,
+      "classRoom": "高二(3)班",
+      "classTea": "周星",
+      "classTeaTel": "15915752472",
+      "Chineselanguage": "石建国",
+      "mathematics": "李尚",
+      "English": "周星"
+    },
+    {
+      "id": 9,
+      "classRoom": "高二(4)班",
+      "classTea": "武会明",
+      "classTeaTel": "18778954411",
+      "Chineselanguage": "武会明",
+      "mathematics": "王明明",
+      "English": "蒋正帆"
+    },
+    {
+      "id": 10,
+      "classRoom": "高二(5)班",
+      "classTea": "石建国",
+      "classTeaTel": "13299875022",
+      "Chineselanguage": "石建国",
+      "mathematics": "杨华",
+      "English": "周星"
     }
   ]
 }

@@ -9,7 +9,7 @@
 
       <el-dropdown trigger="click" @command="backLogin">
         <span>
-          <span>名字</span>
+          <span>{{ username }}</span>
           <i class="el-icon-setting" style="margin-left: 15px"></i>
         </span>
         <el-dropdown-menu slot="dropdown">
@@ -20,7 +20,7 @@
 
     <el-container>
       <!-- 侧边栏 -->
-      <el-aside :width="asideIcon?'200px': '64px'">
+      <el-aside :width="asideIcon ? '200px' : '64px'">
         <el-menu
           router
           :collapse="!asideIcon"
@@ -38,7 +38,12 @@
               <span>{{ item.menuName }}</span>
             </template>
             <!-- 二级菜单 -->
-            <el-menu-item :index="'/home'+i.path" v-for="i in item.children" :key="i.id" @click="setActiveIndexAction(i.path)">
+            <el-menu-item
+              :index="i.path"
+              v-for="i in item.children"
+              :key="i.id"
+              @click="setActiveIndexAction(i.path)"
+            >
               <i class="el-icon-menu"></i>
               {{ i.menuName }}
             </el-menu-item>
@@ -55,11 +60,10 @@
 </template>
 
 <script>
-
 export default {
-  
   data() {
     return {
+      username: "",
       menuList: [],
       iconList: {
         //根据menuList的id,手动添加icon
@@ -70,31 +74,33 @@ export default {
         105: "el-icon-s-data",
       },
       asideIcon: true,
-      activeIndex: '' // 菜单高亮
+      activeIndex: "", // 菜单高亮
     };
   },
   methods: {
     async getMenuList() {
-      let type = window.sessionStorage.getItem('type')
-      let { data: res } = await this.$api.get_menuList({id:type});
-      console.log(res);
+      let type = window.sessionStorage.getItem("type");
+      let { data: res } = await this.$api.get_menuList({ id: type });
       this.menuList = res[0].data;
     },
     // 点击按钮折叠menu
     asideIconBtnAction() {
       this.asideIcon = !this.asideIcon;
     },
-    backLogin() {},
+    // 退出登录
+    backLogin() {
+      window.sessionStorage.removeItem("token");
+      this.$router.push("/login");
+    },
     // 存储高亮
-    setActiveIndexAction(activeIndex){
-      // window.sessionStorage.setItem('path', activeIndex)
-      this.activeIndex = activeIndex
-    }
+    setActiveIndexAction(activeIndex) {
+      window.sessionStorage.setItem("path", activeIndex);
+      this.activeIndex = activeIndex;
+    },
   },
   created() {
     this.getMenuList();
-    // this.activeIndex = window.sessionStorage.getItem('path')
-    
+    this.username = window.sessionStorage.getItem("name");
   },
 };
 </script>
@@ -130,8 +136,8 @@ export default {
       margin-right: 10px;
     }
   }
-  .el-main{
-    background-color:#eee;
+  .el-main {
+    background-color: #eee;
   }
 }
 </style>

@@ -41,7 +41,13 @@
       </el-col>
     </el-row>
     <!-- 数据展示 -->
-    <el-table :data="tableDataEnd" style="width: 100%" border class="table">
+    <el-table
+      :data="tableDataEnd"
+      style="width: 100%"
+      border
+      class="table"
+      @selection-change="selectListAction"
+    >
       <el-table-column type="selection" align="center"></el-table-column>
       <el-table-column
         type="index"
@@ -77,7 +83,11 @@
             @click="RowAction(scope.row)"
             >编辑</el-button
           >
-          <el-button type="text" icon="el-icon-delete" class="delectBtn"
+          <el-button
+            type="text"
+            icon="el-icon-delete"
+            class="delectBtn"
+            @click="delectAction(scope.row)"
             >删除</el-button
           >
         </template>
@@ -222,7 +232,19 @@ export default {
         ],
       },
       // 编辑表单校验规则
-      EidtRules: {},
+      EidtRules: {
+        task: [
+          { required: true, message: "请输入任务名称", trigger: "blur" },
+          {
+            min: 1,
+            max: 10,
+            message: "长度在 1 到 10 个字符",
+            trigger: "blur",
+          },
+        ],
+      },
+      // 选中的select框的值
+      selectList: [],
     };
   },
   computed: {
@@ -249,14 +271,59 @@ export default {
   },
   methods: {
     // 批量删除
-    delectAll() {},
+    delectAll() {
+      this.selectList.filter((item) => {
+        if (item.id) {
+          this.tableData.forEach((i, index, arr) => {
+            if (i.id == item.id) {
+              arr.splice(index, 1);
+              this.$api.delect_tableData(item.id);
+            }
+          });
+        }
+      });
+    },
+    // 单个删除
+    delectAction(row) {
+      this.tableData.forEach((item, index, arr) => {
+        if (item.id === row.id) arr.splice(index, 1);
+      });
+      this.$api.delect_tableData(row.id);
+    },
     // 筛选
-    select_change() {},
+    select_change(val) {
+      this.$api.get_tableData().then((res) => {
+        if (val == "已完成") {
+          this.tableData = res.data.filter((item) => {
+            return item.state;
+          });
+        } else if (val == "未完成") {
+          this.tableData = res.data.filter((item) => {
+            return !item.state;
+          });
+        } else {
+          this.tableData = res.data;
+        }
+      });
+    },
     // 搜素
-    selectBtnAction() {},
+    selectBtnAction() {
+      this.$api.get_like_tableData(this.inpVal).then((res) => {
+        console.log(res);
+        this.tableData = res.data.filter((item) => {
+          if (item.task.indexOf(this.inpVal) > -1) {
+            return item;
+          }
+        });
+      });
+    },
     //添加
     clickAddAction() {
       this.dialogFormVisible = true;
+    },
+    // 选中select框
+    selectListAction(list) {
+      this.selectList = list;
     },
     // 新增弹出框取消
     closeAction() {
@@ -288,6 +355,13 @@ export default {
     },
     // 更新
     EidtAction() {
+      this.$refs.EidtRef.validate((valid) => {
+        if (!valid) return this.$message.error("更新任务失败");
+        this.confirm();
+      });
+    },
+    // 是否更新
+    confirm() {
       this.$confirm("是否更新该任务信息, 是否继续?", "更新操作", {
         confirmButtonText: "确定",
         cancelButtonText: "取消",

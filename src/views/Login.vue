@@ -88,19 +88,20 @@ export default {
           this.$message.success("恭喜你！登录成功");
           window.sessionStorage.setItem("token", result.data[0].token);
           window.sessionStorage.setItem("type", result.data[0].type);
-          this.addRouter()
+          this.addRouter();
           this.$router.push("/home");
+          window.sessionStorage.setItem("name", result.data[0].username);
         } else {
           this.$message.error("登录失败");
         }
       });
     },
-    addRouter(){
+    addRouter() {
       if (window.sessionStorage.getItem("type") == 1) {
-            router.addRoute("home", addRouter);
-            router.addRoute(noFround);
-          }
-    }
+        router.addRoute("home", addRouter);
+        router.addRoute(noFround);
+      }
+    },
   },
 };
 </script>
